@@ -7,6 +7,7 @@ test.use({
 
 test('Task Configuration', async ({ page }) => {
     test.setTimeout(120000);
+
     await page.goto(DASHBOARD, { waitUntil: 'networkidle' });
 
     await page.getByTestId('menu-item-task-management').click();
