@@ -23,7 +23,7 @@ test('Task Configuration', async ({ page }) => {
 
     //Task Status 
 
-    //New 
+    //New status
     await page.locator('.flex.items-center.justify-center.p-2').click();
     await page.getByRole('button', { name: 'Close' }).click();
     await page.getByTestId('TM-TC-add-status').click();
@@ -47,7 +47,7 @@ test('Task Configuration', async ({ page }) => {
     await page.getByTestId('TM-TC-SF-save').click();
     await expect(page.getByRole('row', { name: 'New' })).toBeVisible();
 
-    //In Progress
+    //In Progress status
     await expect(page.getByTestId('menu-item-my-hrms')).toBeVisible();
 
     await page.getByTestId('TM-TC-add-status').click();
@@ -70,7 +70,7 @@ test('Task Configuration', async ({ page }) => {
     await page.getByTestId('TM-TC-SF-save').click();
     await expect(page.getByRole('row', { name: 'In-Progress' })).toBeVisible();
 
-    //Qa-done
+    //Qa-done status
     await page.getByTestId('TM-TC-add-status').click();
     await expect(page.getByRole('heading', { name: 'Add Task Status' })).toBeVisible();
 
