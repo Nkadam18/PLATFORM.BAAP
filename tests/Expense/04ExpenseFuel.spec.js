@@ -41,7 +41,7 @@ test("test", async ({ page }) => {
 //   await page.waitForTimeout(800);
 //   await page.getByRole("textbox", { name: "Select date" }).click();
 //   await page.waitForTimeout(800);
-//   await page.getByRole("button", { name: "20", exact: true }).click();
+//   await page.getByRole("button", { name: "6", exact: true }).click();
   await page.waitForTimeout(800);
   await page.getByTestId("EXP-btn-save").click();
   await page.waitForTimeout(800);
@@ -67,7 +67,7 @@ test("test", async ({ page }) => {
   await page.waitForTimeout(800);
   await page.getByTestId("PM-PC-filter-month-input").click();
   await page.waitForTimeout(800);
-  await page.getByText("April").click();
+  await page.getByText("October").click();
   await page.waitForTimeout(800);
   await page.getByTestId("PM-PC-filter-year-input").click();
   await page.waitForTimeout(800);
