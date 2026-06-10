@@ -8,6 +8,20 @@ test.use({
 test('Task Configuration', async ({ page }) => {
     test.setTimeout(120000);
 
+
+    //logic
+    const randomText = Math.random()
+        .toString(36)
+        .replace(/[^a-z]/g, '')
+        .substring(0, 6);
+
+    const NewStatus = `New-${randomText}`;
+    const InProgressStatus = `In-Progress-${randomText}`;
+    const QaDoneStatus = `Qa-done-${randomText}`;
+    const FeatureTaskType = `Feature-${randomText}`;
+    const EnhancementTaskType = `Enhancement-${randomText}`;
+    const BugTaskType = `Bug-${randomText}`;
+
     await page.goto(DASHBOARD, { waitUntil: 'networkidle' });
 
     await page.getByTestId('menu-item-task-management').click();
@@ -21,7 +35,8 @@ test('Task Configuration', async ({ page }) => {
     await page.getByTestId('TM-TC-search').fill('Qa');
     await page.getByTestId('TM-TC-clear-search').click();
 
-    //Task Status 
+
+    //Task Statuses
 
     //New status
     await page.locator('.flex.items-center.justify-center.p-2').click();
@@ -30,7 +45,7 @@ test('Task Configuration', async ({ page }) => {
     await expect(page.getByRole('heading', { name: 'Add Task Status' })).toBeVisible()
 
     await page.getByTestId('TM-TC-SF-name').click();
-    await page.getByTestId('TM-TC-SF-name').fill('New');
+    await page.getByTestId('TM-TC-SF-name').fill(NewStatus);
     await page.getByRole('textbox', { name: 'Select color' }).click();
     await expect(page.getByRole('textbox', { name: 'Search color name' })).toBeVisible();
 
@@ -45,7 +60,8 @@ test('Task Configuration', async ({ page }) => {
 
     await page.getByRole('checkbox', { name: 'Language Mapping' }).click();
     await page.getByTestId('TM-TC-SF-save').click();
-    await expect(page.getByRole('row', { name: 'New' })).toBeVisible();
+    await page.waitForLoadState('networkidle');
+    await expect(page.getByRole('row', { name: NewStatus })).toBeVisible();
 
     //In Progress status
     await expect(page.getByTestId('menu-item-my-hrms')).toBeVisible();
@@ -54,7 +70,7 @@ test('Task Configuration', async ({ page }) => {
     await expect(page.getByRole('heading', { name: 'Add Task Status' })).toBeVisible();
 
     await page.getByTestId('TM-TC-SF-name').click();
-    await page.getByTestId('TM-TC-SF-name').fill('In-Progress');
+    await page.getByTestId('TM-TC-SF-name').fill(InProgressStatus);
     await page.getByRole('textbox', { name: 'Select color' }).click();
     await expect(page.getByRole('textbox', { name: 'Search color name' })).toBeVisible();
 
@@ -68,14 +84,15 @@ test('Task Configuration', async ({ page }) => {
     await page.getByRole('checkbox', { name: 'Language Mapping' }).check();
     await page.getByRole('checkbox', { name: 'English' }).check();
     await page.getByTestId('TM-TC-SF-save').click();
-    await expect(page.getByRole('row', { name: 'In-Progress' })).toBeVisible();
+    await page.waitForLoadState('networkidle');
+    await expect(page.getByRole('row', { name: InProgressStatus })).toBeVisible();
 
     //Qa-done status
     await page.getByTestId('TM-TC-add-status').click();
     await expect(page.getByRole('heading', { name: 'Add Task Status' })).toBeVisible();
 
     await page.getByTestId('TM-TC-SF-name').click();
-    await page.getByTestId('TM-TC-SF-name').fill('Qa-done');
+    await page.getByTestId('TM-TC-SF-name').fill(QaDoneStatus);
     await page.getByRole('textbox', { name: 'Select color' }).click();
     await expect(page.getByRole('textbox', { name: 'Search color name' })).toBeVisible();
 
@@ -96,5 +113,59 @@ test('Task Configuration', async ({ page }) => {
     await expect(page.getByRole('button', { name: '✓' })).toBeVisible();
 
     await page.getByTestId('TM-TC-SF-save').click();
-    await expect(page.getByRole('row', { name: 'Qa-done' })).toBeVisible();
+    await page.waitForLoadState('networkidle');
+    await expect(page.getByRole('row', { name: QaDoneStatus })).toBeVisible();
+
+
+    //Task Types   
+
+    //Feature
+    await page.getByTestId('TM-TC-TAB-TaskConfigType').click();
+    await expect(page.getByTestId('TM-TCT-search-input')).toBeVisible();
+
+    await page.getByTestId('TM-TCT-ADD-BTN').click();
+    await expect(page.getByRole('heading', { name: 'Create Task Type' })).toBeVisible();
+
+    await page.getByTestId('TM-ATCT-NAME-INPUT').click();
+    await page.getByTestId('TM-ATCT-NAME-INPUT').fill(FeatureTaskType);
+    await page.getByTestId('TM-ATCT-description-input').click();
+    await page.getByTestId('TM-ATCT-description-input').fill('All features');
+    await page.locator('.lucide.lucide-upload.h-8').click();
+    await page.getByRole('checkbox', { name: 'Language Mapping' }).check();
+    await expect(page.getByRole('checkbox', { name: 'English' })).toBeVisible();
+
+    await page.getByRole('checkbox', { name: 'Hindi' }).check();
+    await page.getByRole('checkbox', { name: 'English' }).check();
+    await page.getByTestId('TM-TC-APC-save-btn').click();
+
+    //Enhancement
+    await page.getByTestId('TM-TCT-ADD-BTN').click();
+    await expect(page.getByRole('heading', { name: 'Create Task Type' })).toBeVisible();
+
+    await page.getByTestId('TM-ATCT-NAME-INPUT').click();
+    await page.getByTestId('TM-ATCT-NAME-INPUT').fill(EnhancementTaskType);
+    await page.getByTestId('TM-ATCT-description-input').click();
+    await page.getByTestId('TM-ATCT-description-input').fill('Newly came features');
+    await page.getByText('Click to upload iconJPG, PNG').click();
+    await page.getByRole('checkbox', { name: 'Language Mapping' }).check();
+    await page.getByRole('checkbox', { name: 'English' }).check();
+    await page.getByTestId('TM-TC-APC-save-btn').click();
+
+    //bug 
+    await page.getByTestId('TM-TCT-ADD-BTN').click();
+    await expect(page.getByRole('heading', { name: 'Create Task Type' })).toBeVisible();
+
+    await page.getByTestId('TM-ATCT-NAME-INPUT').click();
+    await page.getByTestId('TM-ATCT-NAME-INPUT').fill(BugTaskType);
+    await page.getByTestId('TM-ATCT-description-input').click();
+    await page.getByTestId('TM-ATCT-description-input').fill('Issues');
+    await page.getByText('Click to upload iconJPG, PNG').click();
+    await page.getByRole('checkbox', { name: 'Language Mapping' }).check();
+    await expect(page.getByRole('checkbox', { name: 'English' })).toBeVisible();
+
+    await page.getByText('English').nth(2).click();
+    await page.locator('label').filter({ hasText: 'Marathi' }).nth(2).click();
+    await page.locator('label').filter({ hasText: 'Hindi' }).click();
+    await page.getByTestId('TM-TC-APC-save-btn').click();
+
 }); 
