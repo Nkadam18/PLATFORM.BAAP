@@ -18,7 +18,7 @@ test("test", async ({ page }) => {
   await page.getByTestId("AM-MAR-raise-request-button").click();
   await page.waitForTimeout(800);
   await page.locator(".react-select__input-container").first().click();
-  await page.getByRole("option", { name: "Nagesh Sureshrao Kadam" }).click();
+  await page.getByRole("option", { name: "Nagesh Kadam" }).click();
   await page
     .locator("div")
     .filter({ hasText: /^Select asset$/ })

@@ -19,7 +19,7 @@ test.setTimeout(120000)
   await page.waitForTimeout(800);
   await page.getByTestId("AM-AR-search-requests-input").fill("Nagesh");
   await page.waitForTimeout(800);
-  await page.getByText("Nagesh Sureshrao Kadam").nth(0).click();
+  await page.locator(".block.truncate.w-full").nth(0).click();
   await page.waitForTimeout(800);
   await page.getByTestId("AM-AR-ARD-tab-workflow").click();
   await page.waitForTimeout(800);

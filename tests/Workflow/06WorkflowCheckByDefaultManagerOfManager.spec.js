@@ -13,7 +13,7 @@ test('test', async ({ page }) => {
     await page.waitForTimeout(800);
     await page.getByTestId('submenu-item-users').click();
     await page.waitForTimeout(800);
-    await page.getByTestId('UM-emp-list-edit-btn').nth(6).click();
+    await page.getByTestId('UM-emp-list-edit-btn').nth(3).click();
     await page.waitForTimeout(800);
     await page.locator('.absolute > .text-\\[var\\(--text-color\\)\\]').first().click();
     await page.waitForTimeout(800);
@@ -97,7 +97,7 @@ test('test', async ({ page }) => {
     await page.waitForTimeout(800);
     await page.locator('//*[@id="root"]/div/div/div[3]/div/div[2]/div[4]/div[2]/div/div[1]/div/div/div/div[1]/div[2]').click();
     await page.waitForTimeout(800);
-    await page.getByRole('option', { name: 'N Kadam' }).click();
+    await page.getByRole('option', { name: 'Nagesh Kadam' }).click();
     await page.waitForTimeout(800);
     await page.locator('div').filter({ hasText: /^Select asset$/ }).nth(3).click();
     await page.waitForTimeout(800);
@@ -117,7 +117,7 @@ test('test', async ({ page }) => {
     await page.waitForTimeout(800);
     await page.getByTestId('SI-username-input-password').click();
     await page.waitForTimeout(800);
-    await page.getByTestId('SI-username-input-password').fill('7058735643');
+    await page.getByTestId('SI-username-input-password').fill('nkadam8080+1@gmail.com');
     await page.waitForTimeout(800);
     await page.getByTestId('SI-password-input-password').click();
     await page.waitForTimeout(800);
@@ -131,7 +131,7 @@ test('test', async ({ page }) => {
     await page.waitForTimeout(800);
     await page.getByTestId('submenu-item-asset-requests').click();
     await page.waitForTimeout(800);
-    await page.getByText('N Kadam').first().click();
+    await page.locator('.block.truncate.w-full').first().click();
     await page.waitForTimeout(800);
     await page.getByTestId('AM-AR-ARD-tab-workflow').click();
     await page.waitForTimeout(800);
@@ -167,7 +167,7 @@ test('test', async ({ page }) => {
     await page.waitForTimeout(800);
     await page.getByTestId('SI-username-input-password').click();
     await page.waitForTimeout(800);
-    await page.getByTestId('SI-username-input-password').fill('7058735643');
+    await page.getByTestId('SI-username-input-password').fill('nkadam8080+1@gmail.com');
     await page.waitForTimeout(800);
     await page.getByTestId('SI-password-input-password').click();
     await page.waitForTimeout(800);

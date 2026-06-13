@@ -19,7 +19,7 @@ test("test", async ({ page }) => {
   await page.waitForTimeout(800);
   await page.getByTestId("AM-AR-search-requests-input").fill("Nagesh");
   await page.waitForTimeout(800);
-  await page.getByText("Nagesh Sureshrao Kadam").nth(0).click();
+  await page.getByText("Nagesh kadam").nth(0).click();
   await page.waitForTimeout(800);
   await page.getByTestId("AM-AR-ARD-tab-workflow").click();
   await page.waitForTimeout(800);

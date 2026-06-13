@@ -13,7 +13,7 @@ test("test", async ({ page }) => {
   await page.getByTestId("submenu-item-my-asset-requests").click();
   await page.getByTestId("AM-MAR-raise-request-button").click();
   await page.getByTestId("AM-MAR-RR-AAR-user-input").click();
-  await page.getByText("Nagesh Sureshrao Kadam").nth(1).click();
+  await page.getByText("Nagesh kadam").nth(1).click();
   await page.getByTestId("AM-MAR-RR-AAR-asset-type-input").click();
   await page.getByText("Bigs-screen - Samsung").click();
   await page.getByTestId("AM-MAR-RR-AAR-priority-dropdown-button").click();

@@ -44,13 +44,13 @@ test("test", async ({ page }) => {
 
   await page.getByTestId("AM-AC-AAC-Duration-Start-Date").click();
   await page.waitForTimeout(800);
-  await page.getByRole('button', { name: '31' }).click();
+  await page.getByRole('button', { name: '14' }).click();
   await page.waitForTimeout(800);
   await page.getByTestId("AM-AC-AAC-Duration-End-Date").click();
 
   await page.getByTestId("AM-AC-AAC-save-checkout-button").click();
   await page.waitForTimeout(800);
-  await page.getByText("Nagesh Sureshrao Kadam").nth(0).click();
+  await page.locator(".block.truncate.w-full").nth(0).click();
   await page.waitForTimeout(800);
   await page.getByTestId("AM-AR-ARD-tab-workflow").click();
   await page.waitForTimeout(800);

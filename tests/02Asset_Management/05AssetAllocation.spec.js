@@ -15,7 +15,7 @@ test("test", async ({ page }) => {
   await page.waitForTimeout(500)
   await page.getByTestId('AM-AL-user-input').click();
   await page.waitForTimeout(500)
-  await page.getByRole('listitem').filter({ hasText: 'Nagesh Sureshrao Kadam' }).click();
+  await page.getByRole('listitem').filter({ hasText: 'Nagesh kadam' }).click();
   await page.waitForTimeout(500)
   await page.getByTestId('AM-AL-asset-type-input').click();
   await page.waitForTimeout(500)
@@ -27,12 +27,12 @@ test("test", async ({ page }) => {
   await page.waitForTimeout(500)
   await page.getByTestId('AM-AL-assigned-date-input').click();
   await page.waitForTimeout(500)
-  await page.getByRole('button', { name: '16', exact: true }).click();
+  await page.getByRole('button', { name: '13', exact: true }).click();
   await page.waitForTimeout(500)
   await page.getByTestId('AM-AL-save-allocation-button').click();
   await page.waitForTimeout(500)
   await page.getByTestId('AM-AA-AAM-users-tab').click();
   await page.waitForTimeout(500)
-  await page.getByText('Nagesh Sureshrao Kadam').click();
+  await page.getByText('Nagesh kadam').click();
   await page.waitForTimeout(500)
 });
