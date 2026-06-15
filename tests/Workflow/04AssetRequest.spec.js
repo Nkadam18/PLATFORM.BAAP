@@ -8,51 +8,32 @@ test("test", async ({ page }) => {
   test.setTimeout(120000)
 
   await page.goto(DASHBOARD, { waitUntil: "networkidle" });
-
   ///APPROVE ASSET REQUEST IN ASSET REQUEST
-
   await page.getByTestId("menu-item-asset-management").click();
-  await page.waitForTimeout(800);
   await page.getByTestId("submenu-item-asset-requests").click();
-  await page.waitForTimeout(800);
   await page.getByTestId("AM-AR-search-requests-input").click();
-  await page.waitForTimeout(800);
-  await page.getByTestId("AM-AR-search-requests-input").fill("Nagesh");
-  await page.waitForTimeout(800);
+  await page.getByTestId("AM-AR-search-requests-input").fill("N");
   await page.locator("span.block.truncate.w-full").first().click();
-  await page.waitForTimeout(800);
   await page.getByTestId("AM-AR-ARD-tab-workflow").click();
-  await page.waitForTimeout(800);
   await page.getByText("Level 1Pending").click();
-  await page.waitForTimeout(800);
   await page.getByTestId("AM-AR-ARD-W-approve-button-0-0").click();
-  await page.waitForTimeout(800);
   await page.getByText('Level 2Pending').click();
-  await page.waitForTimeout(800);
   await page.getByTestId('AM-AR-ARD-W-approve-button-1-0').click();
-  await page.waitForTimeout(800);
   await page.getByText('Level 3Pending').click();
-  await page.waitForTimeout(800);
   await page.getByTestId('AM-AR-ARD-W-approve-button-2-0').click();
-  await page.waitForTimeout(800);
   await page.getByTestId("AM-AR-ARD-tab-manager-action").click();
-  await page.waitForTimeout(800);
   await page
     .getByTestId("AM-AR-ARD-MA-allocation-assigned-date-picker")
     .click();
-  await page.waitForTimeout(800);
+
   // await page.getByRole("button", { name: "1" }).click();
   await page.locator('//*[@id="root"]/div/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[2]/div/div[2]/div[2]/div[3]/button[2]').click();
-  await page.waitForTimeout(800);
-
+  
   const dropdown = page.getByTestId(
     "AM-AR-ARD-MA-allocation-unique-identifier-input-0",
   );
-  await page.waitForTimeout(800);
+
   await dropdown.click();
   await page.locator('[data-testid*="allocation-asset-item"]').first().click();
-  await page.waitForTimeout(800);
-
   await page.getByRole("button", { name: "Save" }).click();
-  await page.waitForTimeout(500);
 });

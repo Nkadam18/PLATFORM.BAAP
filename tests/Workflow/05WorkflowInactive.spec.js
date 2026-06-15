@@ -10,11 +10,11 @@ test('test', async ({ page }) => {
     test.setTimeout(120000);
 
   await page.getByTestId('menu-item-click-workflow').click();
-  await page.waitForTimeout(800);
+  
   await page.locator('.relative > button').first().click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId('WF-CN-workflow-status-toggle').click();
-  await page.waitForTimeout(800);
+  
   await page.getByRole('button', { name: 'Update' }).click();
 });
 
