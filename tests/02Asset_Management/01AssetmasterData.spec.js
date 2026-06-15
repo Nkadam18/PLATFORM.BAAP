@@ -110,132 +110,132 @@ test("test", async ({ page }) => {
   //Asset master data in asset management
 
   await page.getByTestId("menu-item-asset-management").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("submenu-item-asset-master-data").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("AM-AMD-M-asset-type-tab").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("AM-AMD-AT-add-type-button").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("AM-AMD-AT-add-asset-type-input").click();
   await page.getByTestId("AM-AMD-AT-add-asset-type-input").fill(assetType);
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AT-add-asset-code-input").click();
   await page.getByTestId("AM-AMD-AT-add-asset-code-input").fill(assetCode);
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AT-add-asset-subtype-input").click();
   await page.getByTestId("AM-AMD-AT-add-asset-subtype-input").fill(subType);
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AT-add-asset-description-input").click();
   await page
     .getByTestId("AM-AMD-AT-add-asset-description-input")
     .fill("Useful for connect laptop to big-screen");
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AT-save-asset-type-button").click();
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AT-edit-button-0").click();
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AT-add-asset-code-input").click();
   await page
     .getByTestId("AM-AMD-AT-add-asset-code-input")
     .fill(`${assetCode}1`);
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AT-save-asset-type-button").click();
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AT-search-asset-types-input").click();
   await page.getByTestId("AM-AMD-AT-search-asset-types-input").fill("Hdmi");
-  await page.waitForTimeout(800);
+  
 
   await page.getByText(assetType).click();
-  await page.waitForTimeout(800);
+  
 
   await page.locator(".lucide.lucide-x > path:nth-child(2)").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("AM-AMD-AT-pagination-page-2").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("AM-AMD-AT-pagination-items-per-page-trigger").click();
   await page.getByTestId("AM-AMD-AT-pagination-items-per-page-25").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("AM-AMD-AT-pagination-items-per-page-trigger").click();
   await page.getByTestId("AM-AMD-AT-pagination-items-per-page-10").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("AM-AMD-M-asset-data-tab").click();
 
   /////////
   await page.getByTestId("AM-AMD-AD-add-asset-button").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("AM-AMD-AM-asset-type-input").click();
 
   await page.getByText(new RegExp(assetType)).click();
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AM-unique-identifier-input").click();
   await page.getByTestId("AM-AMD-AM-unique-identifier-input").fill(uniqueId);
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AM-serial-number-input").click();
   await page.getByTestId("AM-AMD-AM-serial-number-input").fill(serialNo);
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AM-save-asset-button").click();
-  await page.waitForTimeout(800);
+  
   //////////
 
   await page.getByTestId("AM-AMD-AD-add-asset-button").click();
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AM-asset-type-input").click();
   await page.locator("div.font-medium").first().click();
   // await page.getByText(new RegExp(assetType)).click();
 
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AM-unique-identifier-input").click();
   await page
     .getByTestId("AM-AMD-AM-unique-identifier-input")
     .fill(uniqueId + 1);
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AM-serial-number-input").click();
   await page.getByTestId("AM-AMD-AM-serial-number-input").fill(serialNo + 2);
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AM-save-asset-button").click();
-  await page.waitForTimeout(800);
+  
   //////////
 
   await page.getByTestId("AM-AMD-AD-add-asset-button").click();
-  await page.waitForTimeout(800);
+  
   
   await page.getByTestId("AM-AMD-AM-asset-type-input").click();
   await page.locator("div.font-medium").first().click();
   // await page.getByText(new RegExp(assetType)).click();
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AM-unique-identifier-input").click();
   await page
     .getByTestId("AM-AMD-AM-unique-identifier-input")
     .fill(uniqueId + 3);
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AM-serial-number-input").click();
   await page.getByTestId("AM-AMD-AM-serial-number-input").fill(serialNo + 4);
-  await page.waitForTimeout(800);
+  
 
   await page.getByTestId("AM-AMD-AM-save-asset-button").click();
-  await page.waitForTimeout(800);
+  
   //////////////
   await page.getByTestId("AM-AMD-AD-search-assets-input").click();
   await page.getByTestId("AM-AMD-AD-search-assets-input").fill("Hdmi");
-  await page.waitForTimeout(800);
+  
   await page.locator(".lucide.lucide-x > path:nth-child(2)").click();
 
   // await page.getByText("Charger - HP10").click();
@@ -250,7 +250,7 @@ test("test", async ({ page }) => {
   // await page.getByText("Laptop - Dell10").click();
   // await page.getByText("Mouse - Lapcare3").click();
 
-  await page.waitForTimeout(800);
+  
 
   await page
     .locator(
@@ -262,7 +262,7 @@ test("test", async ({ page }) => {
       '//*[@id="root"]/div/div/div[3]/div/div[3]/div/div[1]/div/div[1]/div/div[1]/div/p',
     )
     .click();
-  await page.waitForTimeout(800);
+  
   await page.locator(".lucide.lucide-rotate-ccw").click();
-  await page.waitForTimeout(800);
+  
 });
