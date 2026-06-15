@@ -259,232 +259,232 @@ test("test", async ({ page }) => {
   await page.goto(DASHBOARD, { waitUntil: "networkidle" });
 
   await page.getByTestId("menu-item-e-commerce").click();
-  await page.waitForTimeout(800);
+  
 
   await page
     .getByTestId("submenu-container-e-commerce")
     .getByTestId("submenu-item-configuration")
     .click();
 
-  await page.waitForTimeout(800);
+  
 
   // PRODUCT CATEGORY
   await page.getByTestId("EC-CFG-btn-tab-category").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-CAT-btn-add").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-CAT-add-input-name").fill(category);
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-CAT-add-search-input-tag").click();
-  await page.waitForTimeout(800);
+  
 
   await page
     .locator('[data-testid^="EC-CAT-add-dropdown-tag-item-"]')
     .first()
     .click();
-  await page.waitForTimeout(800);
+  
   await page
     .getByTestId("EC-CAT-add-input-description")
     .fill("Electronics use in daily life");
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-CAT-add-btn-save").click();
-  await page.waitForTimeout(800);
+  
 
   // PRODUCT SUBCATEGORY
   await page.getByTestId("EC-CFG-btn-tab-subcategory").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-SUB-btn-add").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-SUB-add-input-name").fill(subCategory);
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-SUB-add-search-input-category").click();
-  await page.waitForTimeout(800);
+  
   await page.getByText(category).click();
-  await page.waitForTimeout(800);
+  
 
   await page.locator('//*[@id="root"]/div/div/div[3]/div/div[2]/div/div/div/div[6]/div[2]/div/div[4]/div[2]/div/input').click();
-  await page.waitForTimeout(800);
+  
   await page
   .locator('[data-testid^="EC-SUB-add-dropdown-tag-item-"]')
   .nth(1)
   .click();
-await page.waitForTimeout(800);
+
 
 
   await page
     .getByTestId("custom-rich-text-editor")
     .fill("usful for todys generation");
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-SUB-add-btn-save").click();
-  await page.waitForTimeout(800);
+  
 
   // PRODUCT TAGS
   await page.getByTestId("EC-CFG-btn-tab-tags").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-TAG-btn-add").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-TAG-a-ip-name").fill(tag1);
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-TAG-a-btn-add-list").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-TAG-a-ip-name").fill(tag2);
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-TAG-a-ip-name").press("Enter");
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-TAG-a-btn-save").click();
-  await page.waitForTimeout(800);
+  
 
   // BUSINESS TYPE
   await page.getByTestId("EC-CFG-btn-tab-businesstype").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-BTYPE-btn-add").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-BTYPE-a-ip-name").fill(businessType);
-  await page.waitForTimeout(800);
+  
   await page
     .getByTestId("custom-rich-text-editor")
     .fill("Auto generated business type");
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-BTYPE-a-btn-save").click();
-  await page.waitForTimeout(800);
+  
 
   // BUSINESS CATEGORY
   await page.getByTestId("EC-CFG-btn-tab-productcategory").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-PC-btn-add").click();
-  await page.waitForTimeout(800);
+  
   await page
     .getByRole("textbox", { name: "Enter category name" })
     .fill(businessCategory);
-  await page.waitForTimeout(800);
+  
   await page.getByRole("textbox", { name: "Search business type" }).click();
-  await page.waitForTimeout(800);
+  
   await page.getByText(businessType).click();
-  await page.waitForTimeout(800);
+  
   await page.getByRole("button", { name: "Save" }).click();
-  await page.waitForTimeout(800);
+  
 
   // BUSINESS SUBCATEGORY
   await page.getByTestId("EC-CFG-btn-tab-productsubcategory").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-PS-btn-add").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-PS-add-input-name").fill(businessSubCategory);
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-PS-add-search-input-category").click();
-  await page.waitForTimeout(800);
+  
   await page.getByText(businessCategory).click();
-  await page.waitForTimeout(800);
+  
   await page
     .getByTestId("EC-PS-add-input-description")
     .fill("Auto generated business subcategory");
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-PS-add-btn-save").click();
-  await page.waitForTimeout(800);
+  
 
   // BUSINESS TAGS
   await page.getByTestId("EC-CFG-btn-tab-producttag").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-PT-btn-add").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-PT-a-ip-name").fill(businessTag1);
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-PT-a-btn-add-list").click();
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-PT-a-ip-name").fill(businessTag2);
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-PT-a-ip-name").press("Enter");
-  await page.waitForTimeout(800);
+  
   await page.getByTestId("EC-PT-a-btn-save").click();
-  await page.waitForTimeout(800);
+  
 
   // // SERVICE CATEGORY
   // await page.getByTestId("EC-CFG-btn-tab-servicecategory").click();
-  // await page.waitForTimeout(800);
+  // 
   // await page.getByRole("button", { name: "Add Service Category" }).click();
-  // await page.waitForTimeout(800);
+  // 
   // await page
   //   .getByRole("textbox", { name: "Enter category name" })
   //   .fill(serviceCategory);
-  // await page.waitForTimeout(800);
+  // 
   // await page
   //   .getByTestId("custom-rich-text-editor")
   //   .fill("Auto generated service category");
-  // await page.waitForTimeout(800);
+  // 
   // await page.getByRole("button", { name: "Save" }).click();
-  // await page.waitForTimeout(800);
+  // 
 
   // // SERVICE SUBCATEGORY
   // await page.getByTestId("EC-CFG-btn-tab-servicesubcategory").click();
-  // await page.waitForTimeout(800);
+  // 
   // await page.getByRole("button", { name: "Add Service Subcategory" }).click();
-  // await page.waitForTimeout(800);
+  // 
   // await page
   //   .getByRole("textbox", { name: "Enter sub category name" })
   //   .fill(serviceSubCategory);
-  // await page.waitForTimeout(800);
+  // 
   // await page.getByRole("textbox", { name: "Search categories" }).click();
-  // await page.waitForTimeout(800);
+  // 
   // await page.getByText(serviceCategory).click();
-  // await page.waitForTimeout(800);
+  // 
   // await page
   //   .getByTestId("custom-rich-text-editor")
   //   .fill("Auto generated service subcategory");
-  // await page.waitForTimeout(800);
+  // 
   // await page.getByRole("button", { name: "Save" }).click();
-  // await page.waitForTimeout(800);
+  // 
   /////////
 
   // NUMBERS CONFIGURATION - QUOTATION
   //   await page.getByTestId("EC-CFG-btn-tab-numbersconfiguration").click();
-  //   await page.waitForTimeout(800);
+  //   
   //   await page.getByRole("button", { name: "Add Number Configuration" }).click();
-  //   await page.waitForTimeout(800);
+  //   
 
   //   await page.locator(".react-select__input-container").first().click();
-  //   await page.waitForTimeout(800);
+  //   
   //   await page.getByRole("option", { name: "Quotation" }).click();
-  //   await page.waitForTimeout(800);
+  //   
 
   //   await page.getByRole("textbox", { name: "e.g. QUO" }).fill(tag1);
-  //   await page.waitForTimeout(800);
+  //   
   //   await page.getByRole("textbox", { name: "e.g. DRAFT" }).fill(tag2);
-  //   await page.waitForTimeout(800);
+  //   
 
   //   await page.getByRole("button", { name: "Save" }).click();
-  //   await page.waitForTimeout(800);
+  //   
 
   //   // INVOICE
   //   await page.getByRole("button", { name: "Add Number Configuration" }).click();
-  //   await page.waitForTimeout(800);
+  //   
 
   //   await page.locator(".react-select__input-container").first().click();
-  //   await page.waitForTimeout(800);
+  //   
   //   await page.getByRole("option", { name: "Invoice" }).click();
-  //   await page.waitForTimeout(800);
+  //   
 
   //   await page.getByRole("textbox", { name: "e.g. QUO" }).fill(tag1);
-  //   await page.waitForTimeout(800);
+  //   
   //   await page.getByRole("textbox", { name: "e.g. DRAFT" }).fill(tag2);
-  //   await page.waitForTimeout(800);
+  //   
 
   //   await page.getByRole("button", { name: "Save" }).click();
-  //   await page.waitForTimeout(800);
+  //   
 
   //   // ORDER
   //   await page.getByRole("button", { name: "Add Number Configuration" }).click();
-  //   await page.waitForTimeout(800);
+  //   
 
   //   await page.locator(".react-select__input-container").first().click();
-  //   await page.waitForTimeout(800);
+  //   
   //   await page.getByRole("option", { name: "Order" }).click();
-  //   await page.waitForTimeout(800);
+  //   
 
   //   await page.getByRole("textbox", { name: "e.g. QUO" }).fill(tag1);
-  //   await page.waitForTimeout(800);
+  //   
   //   await page.getByRole("textbox", { name: "e.g. DRAFT" }).fill(tag2);
-  //   await page.waitForTimeout(800);
+  //   
 
   //   await page.getByRole("button", { name: "Save" }).click();
-  //   await page.waitForTimeout(800);
+  //   
 });
