@@ -54,7 +54,7 @@ test("test", async ({ page }) => {
   await page.getByTestId("EC-AWH-ip-manager-search").click();
   
 
-  await page.locator("text=Nk Kadam").last().click();
+  await page.locator("text=N Kadam").last().click();
   
 
   await page.getByTestId("EC-AWH-tg-status").click();

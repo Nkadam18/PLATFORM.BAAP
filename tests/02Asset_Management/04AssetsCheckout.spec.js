@@ -68,7 +68,7 @@ test("test", async ({ page }) => {
   
 
   //upadate date every day to avoid error of past date
-  await page.getByRole('button', { name: '15' }).click();
+  await page.getByRole('button', { name: '27' }).click();
   
   await page.getByTestId("AM-AC-AAC-Duration-End-Date").click();
 

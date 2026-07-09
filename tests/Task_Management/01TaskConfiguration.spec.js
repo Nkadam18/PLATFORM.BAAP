@@ -167,5 +167,4 @@ test('Task Configuration', async ({ page }) => {
     await page.locator('label').filter({ hasText: 'Marathi' }).nth(2).click();
     await page.locator('label').filter({ hasText: 'Hindi' }).click();
     await page.getByTestId('TM-TC-APC-save-btn').click();
-
-}); 
+});
