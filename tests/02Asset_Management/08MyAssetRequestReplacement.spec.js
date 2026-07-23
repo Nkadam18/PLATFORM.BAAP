@@ -17,6 +17,7 @@ test("test", async ({ page }) => {
   await page.getByTestId("AM-MAR-raise-request-button").click();
   
   await page.locator(".react-select__input-container").first().click();
+  await page.locator('#react-select-2-input').fill('Nk');
   await page.getByRole("option", { name: "Nk kadam" }).click();
   await page
     .locator("div")
