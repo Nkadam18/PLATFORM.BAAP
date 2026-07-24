@@ -16,10 +16,10 @@ test("Create New Quotation Every Run", async ({ page }) => {
   const lastName = `Kadam${id}`;
   const phone = `9${Math.floor(100000000 + Math.random() * 899999999)}`;
 
-  await page.getByTestId("menu-item-e-commerce").click();
+  await page.getByTestId("menu-item-sales-&-distribution").click();
 
   await page
-    .getByTestId("submenu-container-e-commerce")
+    .getByTestId("submenu-container-sales-&-distribution")
     .getByTestId("submenu-item-quotations")
     .click();
 

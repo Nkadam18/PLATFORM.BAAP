@@ -14,7 +14,7 @@ test("test", async ({ page }) => {
 
   await page.goto(DASHBOARD, { waitUntil: "networkidle" });
 
-  await page.getByTestId("menu-item-e-commerce").click();
+  await page.getByTestId("menu-item-sales-&-distribution").click();
 
   await page.getByTestId("submenu-item-discounts").click();
 
