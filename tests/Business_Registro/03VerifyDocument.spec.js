@@ -33,8 +33,8 @@ test("test", async ({ page }) => {
     .getByTestId("CRM-L-add-leads-address-textarea")
     .fill("Parabhani, Maharashtra, India");
 
-  await page.getByTestId("CRM-L-add-leads-tags-search-input").click();
-  await page.locator("span.capitalize").click();
+  // await page.getByTestId("CRM-L-add-leads-tags-search-input").click();
+  // await page.locator("span.capitalize").click();
 
   await page.getByRole("button", { name: "Save" }).click();
   await expect(page.getByText("Lead added")).toBeVisible();

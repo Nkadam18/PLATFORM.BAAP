@@ -18,7 +18,7 @@ test("test", async ({ page }) => {
 
   await page.getByTestId("menu-item-commercial-management").click();
 
-  await page.getByTestId("submenu-item-configuration").nth(0).click();
+  await page.getByTestId("submenu-item-configuration").nth(2).click();
 
   // SERVICE CATEGORY
   await page.getByTestId("EC-CFG-btn-tab-servicecategory").click();
